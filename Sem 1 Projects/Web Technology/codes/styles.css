@@ -1,0 +1,123 @@
+*::selection {
+    color: crimson;
+}
+
+.header {
+    background: url(WhatsApp\ Image\ 2023-11-07\ at\ 11.37.19_691fdc0f.jpg);
+    background-size: 100%;
+    background-position-y: -300px;
+    width: 101%;
+    height: 72vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 0;
+    position: relative;
+}
+
+#navul {
+    display: flex;
+    margin-top: 6px;
+    margin-left: 106px;
+    list-style: none;
+    gap: 146px;
+}
+
+ul li {
+    text-decoration: none;
+}
+
+#navul li {
+    font-size: 21px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 20px;
+    text-decoration: none;
+    color: black;
+}
+
+#navbar li a {
+    text-decoration: none;
+}
+
+#navbar li:hover {
+    text-decoration: underline;
+}
+
+.logo {
+    height: 500px;
+    width: 1593px;
+    align-items: center;
+    display: block;
+    margin: auto;
+
+}
+
+#signin {
+    background-color: black;
+    color: white;
+    padding: 6px;
+    font-size: 12px;
+    font-family: arial;
+    margin-right: 16px;
+}
+
+
+#signin:hover {
+    background-color: red;
+    color: white;
+}
+
+#langbtn {
+    /* background-color: black;
+    color: white;
+    padding: 6px;
+    font-size: 12px;
+    font-family: arial; */
+}
+
+#langbtn:hover {
+    color: white;
+    background-color: red;
+}
+
+.header-nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 90px 95px;
+}
+
+.language-btn {
+    /* display: inline-flex; */
+    align-items: center;
+    /* background: transparent; */
+    border: 7px 10px;
+    padding: 7px 10px;
+    background-color: black;
+    color: white;
+    padding: 5pxpx;
+    font-size: 11px;
+    font-family: arial;
+}
+
+
+
+.header-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    margin-top: 100px;
+}
+
+.header-content h1 {
+    font-size: 60px;
+    line-height: 70px;
+    font-weight: 600;
+    max-width: 650px;
+}
+
+.header-content h3 {
+    font-weight: 400;
+    margin-bottom: -5px;
+}
