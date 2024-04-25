@@ -1,0 +1,66 @@
+import tkinter as tk
+from tkinter import filedialog
+
+def add_to_csv(filename, data):
+  """
+  Appends data to a CSV file (assuming the file exists).
+
+  Args:
+      filename: The path to the CSV file.
+      data: The data to be added (list of values).
+  """
+  # Open the file in append mode
+  with open(filename, 'a', newline='') as csvfile:
+    writer = csv.writer(csvfile)
+    writer.writerow(data)
+
+def choose_file():
+  """
+  Opens a file dialog to select a CSV file.
+  """
+  global filename
+  filename = filedialog.askopenfilename(
+      title="Select CSV File",
+      filetypes=[("CSV files", "*.csv")])
+  if filename:
+    # Enable the "Add" button
+    add_button.config(state="normal")
+
+def add_data():
+  """
+  Prompts the user for data and adds it to the selected CSV file.
+  """
+  if not filename:
+    return  # No file selected
+
+  # Get user input for data to add
+  data_window = tk.Tk()
+  data_window.title("Enter Data")
+
+  data_entry = tk.Entry(data_window)
+  data_entry.pack()
+
+  def submit_data():
+    data = data_entry.get().split(",")  # Split comma-separated data
+    add_to_csv(filename, data)
+    data_window.destroy()
+
+  submit_button = tk.Button(data_window, text="Submit", command=submit_data)
+  submit_button.pack()
+
+  data_window.mainloop()
+
+# Initialize the main window
+root = tk.Tk()
+root.title("Add to CSV")
+
+# Button to select the CSV file
+select_button = tk.Button(root, text="Select CSV File", command=choose_file)
+select_button.pack()
+
+# Initially disabled button to add data (enabled only after selecting a file)
+add_button = tk.Button(root, text="Add Data", command=add_data, state="disabled")
+add_button.pack()
+
+# Run the main loop
+root.mainloop()
